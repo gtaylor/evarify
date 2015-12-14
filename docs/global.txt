@@ -1,0 +1,5 @@
+.. _evarify: https://github.com/gtaylor/evarify
+.. _GitHub project: https://github.com/gtaylor/evarify
+.. _issue tracker: https://github.com/gtaylor/evarify/issues
+
+.. _MIT License: https://tldrlegal.com/license/mit-license

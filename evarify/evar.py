@@ -7,7 +7,7 @@ from collections import UserDict
 
 
 class EnvironmentVariable(object):
-    def __init__(self, name, is_required, default_val=None,
+    def __init__(self, name, is_required=True, default_val=None,
                  filters=None, help_txt=None):
         self.name = name
         self.is_required = is_required

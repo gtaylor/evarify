@@ -1,4 +1,5 @@
 coverage
 flake8
 nose
+Sphinx
 -r requirements.txt
