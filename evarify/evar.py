@@ -6,18 +6,19 @@ import os
 from collections import UserDict
 
 
-class EnvironmentVariable(object):
-    def __init__(self, name, is_required=True, default_val=None,
-                 filters=None, help_txt=None):
-        self.name = name
-        self.is_required = is_required
-        self.default_val = default_val
-        self.filters = filters or []
-        self.help_txt = help_txt
-
-
 class ConfigStore(UserDict):
+    """
+    This is the container for your :py:class:`EnvironmentVariable` definitions,
+    along with their eventual loaded config values. Once :py:meth:`load_values`
+    is ran on an instance of this class, the config values are addressable
+    via the Python dict API.
+    """
     def __init__(self, evar_defs):
+        """
+        :param dict evar_defs: Pass in a dict whose keys are config
+            names and the values are :py:class:`EnvironmentVariable`
+            instances.
+        """
         super(ConfigStore, self).__init__()
         self.evar_defs = evar_defs
 
@@ -25,9 +26,6 @@ class ConfigStore(UserDict):
         """
         Go through the env var map, transferring the values to this object
         as attributes.
-
-        .. note:: The attrib names will match ``config_name``, so be wary
-            of collisions.
 
         :raises: RuntimeError if a required env var isn't defined.
         """
@@ -60,3 +58,30 @@ class ConfigStore(UserDict):
         :raises: ValueError if something is amiss.
         """
         pass
+
+
+class EnvironmentVariable(object):
+    """
+    Defines an Environment Variable to handle.
+    """
+    def __init__(self, name, is_required=True, default_val=None,
+                 filters=None, help_txt=None):
+        """
+        :param str name: The name of the environment variable. *This is
+            case-sensitive!*
+        :keyword bool is_required: If ``True``, this variable must be defined
+            when your Python process starts. If ``False``, the default loaded
+            value will match ``default_val``.
+        :keyword default_val: If ``is_required`` is ``False`` and this
+            environment variable is not defined, this value will be loaded.
+        :keyword list filters: A list of functions to pass the environment
+            variable's value (or default value) through. Order is
+            significant!
+        :keyword str help_txt: Optional help text describing the environment
+            variable.
+        """
+        self.name = name
+        self.is_required = is_required
+        self.default_val = default_val
+        self.filters = filters or []
+        self.help_txt = help_txt

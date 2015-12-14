@@ -19,16 +19,16 @@ expected format, and it will do the conversion to a list for you
    from evarify.filters.python_basics import comma_separated_to_set, \
       validate_is_boolean_true
 
-   store = ConfigStore({
+   settings = ConfigStore({
       'SEED_SERVERS': EnvironmentVariable(
           name='SEED_SERVERS',
           filters=[comma_separated_to_set, validate_is_boolean_true],
       ),
    })
-   store.load_values()
+   settings.load_values()
 
    # Assuming our environment variable was ``SEED_SERVERS=192.168.1.50,192.168.1.51``
-   >>> store['SEED_SERVERS']
+   >>> settings['SEED_SERVERS']
    ['192.168.1.50', '192.168.1.51']
 
 All functions specified in the ``filters`` keyword are ran in order against
@@ -42,6 +42,8 @@ User Guide
    :maxdepth: 2
 
    installation
+   getting_started
+   api_reference
 
 Community Guide
 ---------------
@@ -52,11 +54,3 @@ Community Guide
    support
    release_notes
 
-API Documentation
------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   evar_api
-   evar_filters
