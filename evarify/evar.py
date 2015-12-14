@@ -3,7 +3,7 @@ Pulls config values from environment variables. Checks to make sure we
 have everything.
 """
 import os
-from collections import UserDict
+from future.moves.collections import UserDict
 
 
 class ConfigStore(UserDict):
@@ -19,7 +19,7 @@ class ConfigStore(UserDict):
             names and the values are :py:class:`EnvironmentVariable`
             instances.
         """
-        super(ConfigStore, self).__init__()
+        UserDict.__init__(self)
         self.evar_defs = evar_defs
 
     def load_values(self):
