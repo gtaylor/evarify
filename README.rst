@@ -10,6 +10,14 @@ evarify
 This package contains helpers to validate and perform type coercion on
 environment variables.
 
+Documentation
+-------------
+
+We have some of that! See our `Documentation site`_ for the full usage
+walkthrough and API reference.
+
+.. _Documentation site: http://evarify.readthedocs.org/
+
 Current Status
 --------------
 
