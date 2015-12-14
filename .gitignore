@@ -1,0 +1,18 @@
+# Python gunkage
+*.pyc
+*.egg
+*.egg-info
+.coverage
+.tox
+dist
+build
+MANIFEST
+
+# Editor/IDE stuff
+*~
+*.swp
+*.tmp
+.idea
+
+# Documentation stuff
+docs/_build
