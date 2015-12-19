@@ -8,7 +8,8 @@ evarify
     :target: https://pypi.python.org/pypi/evarify
 
 This package contains helpers to validate and perform type coercion on
-environment variables.
+environment variables. Primarily useful for Python scripts and
+daemons.
 
 Documentation
 -------------
@@ -21,10 +22,11 @@ walkthrough and API reference.
 Current Status
 --------------
 
-Very early goings! Zero guarantees on backwards compatibility for now.
-Input and feedback is encouraged and sought after.
+Working well, good documentation coverage, OK test coverage. API will
+probably be stable unless someone comes in with some suggestions for
+improvements. Input and feedback is encouraged and sought after!
 
 License
 -------
 
-drone-python is licensed under the MIT License.
+evarify is licensed under the MIT License.
