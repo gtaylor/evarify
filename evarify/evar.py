@@ -3,10 +3,9 @@ Pulls config values from environment variables. Checks to make sure we
 have everything.
 """
 import os
-from future.moves.collections import UserDict
 
 
-class ConfigStore(UserDict):
+class ConfigStore(dict):
     """
     This is the container for your :py:class:`EnvironmentVariable` definitions,
     along with their eventual loaded config values. Once :py:meth:`load_values`
@@ -19,7 +18,6 @@ class ConfigStore(UserDict):
             names and the values are :py:class:`EnvironmentVariable`
             instances.
         """
-        UserDict.__init__(self)
         self.evar_defs = evar_defs
 
     def load_values(self):
