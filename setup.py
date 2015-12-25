@@ -19,7 +19,6 @@ setup(
     license="MIT License",
     keywords="environment variable",
     url='https://github.com/gtaylor/evarify',
-    install_requires=['future'],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: System Administrators',
